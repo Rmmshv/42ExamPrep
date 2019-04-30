@@ -27,9 +27,9 @@ int		main(int ac, char **av)
 				if (nbr1 > nbr2)
 					nbr1 -= nbr2;
 				else
-					nbr2 -= nbr1
+					nbr2 -= nbr1;
 			}
-			orintf("%d", nbr1);
+			printf("%d", nbr1);
 		}
 	}
 	printf("\n");
