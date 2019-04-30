@@ -20,7 +20,7 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 
 	gcd = 0;
 	old_a = a;
-	old_b - b;
+	old_b = b;
 	while (1)
 	{
 		if (a == 0)
