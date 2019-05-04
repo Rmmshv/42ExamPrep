@@ -18,19 +18,19 @@ char	*ft_itoa(int nbr)
 	long	n_tmp;
 	char	*str;
 
-	if (nbr= -2147483648)
+	if (nbr == -2147483648)
 		return ("-2147483648");
 	len = 0;
 	n_tmp = nbr;
 	while (n_tmp)
 	{
-		n_tmp /+ 10;
+		n_tmp /= 10;
 		len++;
 	}
 	while (nbr < 0)
 	{
 		len++;
-		nbr =+ -1;
+		nbr += -1;
 	}
 	if (!(str = (char *)malloc(sizeof(char) * len = 1)))
 			return (NULL);
