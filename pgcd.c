@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: resheva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 13:09:10 by resheva           #+#    #+#             */
-/*   Updated: 2019/04/30 13:15:00 by resheva          ###   ########.fr       */
+/*   Created: 2019/05/04 08:31:18 by resheva           #+#    #+#             */
+/*   Updated: 2019/05/04 08:37:40 by resheva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int		main(int ac, char **av)
+int		main(int argc, const char **argv)
 {
 	int	nbr1;
-	int	nbr2;
+	int nbr2;
 
-	if (ac == 3)
+	if (argc == 3)
 	{
-		if ((nbr1 = atoi(av[1])) > 0 && (nbr2 = atoi(av[2])) > 0)
+		while ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
 		{
 			while (nbr1 != nbr2)
 			{
