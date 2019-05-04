@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   first_word.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: resheva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/04 12:46:08 by resheva           #+#    #+#             */
-/*   Updated: 2019/05/04 12:49:55 by resheva          ###   ########.fr       */
+/*   Created: 2019/05/04 13:32:20 by resheva           #+#    #+#             */
+/*   Updated: 2019/05/04 13:42:21 by resheva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strcpy(char *src, char *dst)
+#include <unistd.h>
+
+int		ft_isspace(int i)
 {
-	int		i;
+	if (i == '\t' || i == '\n' || i == '\v' || i == '\f' || i == ' ')
+		return (1);
+	return (0);
+}
+
+int		main(int argc, char **argv)
+{
+	int	i;
 
 	i = 0;
-	while (str[src])
+	if (argc == 2)
 	{
-		dst[i] = src[i];
-		i++;
+		while (ft_isspace((argv[1][i])))
+				i++;
+		while (!(ft_isspace(argv[1][i])) && argv[1][i])
+			write(1, &argv[1][i++], 1);
 	}
-	dst[i] = '\0';
-	return (dst);
+	write(1, "\n", 1);
+	return (0);
 }

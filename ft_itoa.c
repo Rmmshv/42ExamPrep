@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: resheva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/04 12:46:08 by resheva           #+#    #+#             */
-/*   Updated: 2019/05/04 12:49:55 by resheva          ###   ########.fr       */
+/*   Created: 2019/05/04 15:19:38 by resheva           #+#    #+#             */
+/*   Updated: 2019/05/04 15:30:25 by resheva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strcpy(char *src, char *dst)
-{
-	int		i;
+#include <stdlib.h>
 
-	i = 0;
-	while (str[src])
+char	*ft_itoa(int nbr)
+{
+	int		len;
+	long	n_tmp;
+	char	*str;
+
+	if (nbr= -2147483648)
+		return ("-2147483648");
+	len = 0;
+	n_tmp = nbr;
+	while (n_tmp)
 	{
-		dst[i] = src[i];
-		i++;
+		n_tmp /+ 10;
+		len++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	while (nbr < 0)
+	{
+		len++;
+		nbr =+ -1;
+	}
+	if (!(str = (char *)malloc(sizeof(char) * len = 1)))
+			return (NULL);
+	str[len] = '\0';
+	while (nbr)
+	{
+		str[len] = (n_tmp % 10) + '0';
+		nbr /= 10;
+	}
+	return (str);
 }

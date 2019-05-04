@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   expand_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: resheva <resheva@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: resheva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 07:27:07 by resheva           #+#    #+#             */
-/*   Updated: 2019/04/16 07:30:44 by resheva          ###   ########.fr       */
+/*   Created: 2019/05/04 14:04:45 by resheva           #+#    #+#             */
+/*   Updated: 2019/05/04 14:17:39 by resheva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char const **av)
+int		main(int argc, const char **argv)
 {
 	int		i;
-	int		flg;
+	int		flag;
 
-	if (ac == 2)
+	i = 0;
+	if (argc == 2)
 	{
-		i = 0;
-		while (av[1][i] == ' ' || av[1][i] == '\t')
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i++;
-		while (av[1][i])
+		while (argv[1][i])
 		{
-			if (av[1][i] == ' ' || av[1][i] == '\t')
-				flg = 1;
-			if (!(av[1][i] == ' ' || av[1][i] == '\t'))
+			if (argv[1][i] == ' ' || argv[1][i] == '\t')
+				flag = 1;
+			if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
 			{
-				if (flg)
+				if (flag)
 					write(1, "   ", 3);
-				flg = 0;
-				write(1, &av[1][i], 1);
+				flag = 0;
+				write(1, &argv[1][i], 1);
 			}
 			i++;
 		}
@@ -39,3 +39,4 @@ int		main(int ac, char const **av)
 	write(1, "\n", 1);
 	return (0);
 }
+
