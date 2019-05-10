@@ -30,6 +30,7 @@ int		main(int argc, const char **argv)
 					nbr2 -= nbr1;
 			}
 			printf("%d", nbr1);
+			break;
 		}
 	}
 	printf("\n");
